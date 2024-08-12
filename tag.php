@@ -4,7 +4,10 @@ get_header();
 <div class="container mt-5 mb-5">
     <div class="row">
         <main id="site-main" class="col-12 col-md-8">
-            <?php get_template_part('loops/page-content'); ?>
+            <header>
+                <h2>tagged: <?php echo single_tag_title(); ?></h2>
+            </header>
+            <?php get_template_part('loops/search-results'); ?>
         </main>
         <article class="col-12 col-md-4">
             <?php
