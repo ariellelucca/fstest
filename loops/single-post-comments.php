@@ -94,11 +94,14 @@ if (have_comments()) : ?>
           // Otherwise, if it has more than one comment, it has to have the format
           // number_of_comments comments on post_title
           $comment_count = get_comments_number();
+
+          echo sprintf(_n('%s comment', '%s comments', get_comments_number(get_the_id())), get_comments_number(get_the_id())) . ' on "' . get_the_title() .'"';
         ?>
       </p>
 
       <ol class="comment-list">
           <!-- Show the list of comments passing as args 'type=comment&callback=fsl_comment' -->
+           <?php wp_list_comments(['type' => 'comment', 'callback' => 'fsl_comment']); ?>
       </ol><!-- /.comment-list -->
 
       <p class="text-muted">

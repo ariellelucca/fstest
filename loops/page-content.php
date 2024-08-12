@@ -23,6 +23,36 @@
         </section>
 
         <section class="section-three py-4 border-top">
+            <div class="row">
+                <?php
+                    $img = get_field('page_image_custom');
+                    $select = get_field('page_select_custom');
+                    $text = get_field('page_text_custom');
+                    
+                    if (!empty($img)) { ?>
+                    <div class="col-12 col-md-3">
+                        <p><strong>Image ACF</strong></p>
+                        <img src="<?php echo $img['url'] ?>" class="img-thumbnail" alt="<?php echo get_the_title()?>" />
+                        </p>
+                    </div>
+                    <?php
+                    }
+                    if (!empty($select)) { ?>
+                        <div class="col-12 col-md-3">
+                            <p><strong>Select ACF</strong></p>
+                            <p><?php echo $select; ?></p>
+                        </div>
+                        <?php
+                    }
+                    if (!empty($text)) { ?>
+                        <div class="col-12 col-md-3">
+                            <p><strong>Text ACF</strong></p>
+                            <p><?php echo $text ?></p>
+                        </div>
+                    <?php
+                    }
+                ?>
+            </div>
             <!-- Show your content with the ACF fields here -->
         </section>
     </article>
