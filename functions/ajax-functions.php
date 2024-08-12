@@ -15,12 +15,20 @@ function populate_search_results() {
         'posts_per_page' => -1
     ));
 
+    if (have_posts()) {
+        $preresults = '<p>Search results for: '. $s .'</p>';
+    }
+
+    else {
+        $preresults = '<p>Your search yelded no results.</p>';
+    }
+
     ob_start();
     get_template_part('loops/search-results');
     $results = ob_get_clean();
     ob_end_flush();
 
-    echo $results;
+    echo $preresults . $results;
 
     wp_die(); 
 }

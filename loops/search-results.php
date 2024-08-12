@@ -3,9 +3,7 @@
  * The Search Results (Main Header and) Loop
  */
 
- if (have_posts()) : ?>
-    <h2>Search results for: <?php echo get_query_var('s'); ?></h2>
-<?php
+ if (have_posts()) :
     while (have_posts()) :
         the_post(); ?>
         <div class="card mb-3">
@@ -43,7 +41,7 @@
                         </small>
                         <!-- Author -->
                         <small class=""><i class="bi bi-person-circle"></i>
-                            <?php echo get_the_author_link(); ?>
+                            <?php echo the_author_posts_link(get_the_author_ID(get_the_ID())); ?>
                         </small>
                         <!-- Comments -->
                         <small class="">
@@ -57,13 +55,5 @@
         </div>
 
     <?php
-    endwhile; else: ?>
-    <p>Sorry, your search yelded no results.</p>
- <?php endif;   
+    endwhile; endif;   
 ?>
-
-
-<!-- Create the Search result template to show the results of a search -->
-<!-- You have to show the posts using the 'loops/index-loop' -->
-<!-- If not posts exist, you have to show a HTML element with the message 'Sorry, your search yielded no results.'-->
-<!-- You must use bootstrap 5 and, if necessary, custom css styles from the style.css file -->
