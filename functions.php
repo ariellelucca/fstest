@@ -13,3 +13,5 @@ require get_template_directory() . '/functions/action-hooks.php';
 require get_template_directory() . '/functions/navbar.php';
 require get_template_directory() . '/functions/widgets.php';
 require get_template_directory() . '/functions/index-pagination.php';
+require get_template_directory() . '/functions/ajax-functions.php';
+
