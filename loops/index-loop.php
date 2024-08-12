@@ -26,6 +26,14 @@
         </div>
 
         <div class="col-lg-3 col-md-3 pt-5">
+        <?php
+            if(is_active_sidebar('mainbody-widget-area-1')) { ?>
+                <section class="widget-area">
+                    <?php dynamic_sidebar('mainbody-widget-area-1'); ?>
+                </section>
+                <?php
+            }
+            ?>
             <!-- check and show the widget named 'mainbody-widget-area-1' -->
         </div>
     </div>
