@@ -57,8 +57,7 @@
         </div>
 
     <?php
-    endwhile;
-    else: ?>
+    endwhile; else: ?>
     <p>Sorry, your search yelded no results.</p>
  <?php endif;   
 ?>

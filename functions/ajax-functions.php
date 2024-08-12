@@ -7,7 +7,7 @@ function populate_search_results() {
     if (!wp_verify_nonce($_POST['nonce'], 'customjs')) {
         return false;
     }
-    
+
     $s = sanitize_post($_POST['s']);
 
     query_posts(array( 
@@ -20,9 +20,9 @@ function populate_search_results() {
     $results = ob_get_clean();
     ob_end_flush();
 
-    return $results;
+    echo $results;
 
-    wp_die();
+    wp_die(); 
 }
 
 add_action("wp_ajax_populate_search_results", "populate_search_results");
